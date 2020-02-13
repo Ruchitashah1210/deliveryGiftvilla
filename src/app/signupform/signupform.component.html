@@ -1,0 +1,77 @@
+<form [formGroup]="Signupform" (ngSubmit)="onSignup()">
+  <div class="example-container">
+    <mat-form-field>
+      <input matInput placeholder="Enter your email" formControlName="u_EmailId" required>
+      <mat-error *ngIf="Signupform.get('u_EmailId').hasError('required')">Email is required</mat-error>
+      <mat-error *ngIf="Signupform.get('u_EmailId').hasError('email')">Email is invalid</mat-error>
+    </mat-form-field>
+
+    <br>
+
+    <mat-form-field>
+      <input matInput formControlName="u_Name" placeholder="ENTER NAME">
+      <mat-error *ngIf="Signupform.get('u_Name').hasError('required')">Name is required</mat-error>
+      <mat-error *ngIf="Signupform.get('u_Name').hasError('minlength')">Name must be greater than 5 characters
+      </mat-error>
+      <mat-error *ngIf="Signupform.get('u_Name').hasError('pattern')">Only characters are allowed</mat-error>
+
+    </mat-form-field>
+
+    <br>
+    <mat-form-field>
+      <textarea matInput placeholder="ENTER ADDRESS" formControlName="u_Address"></textarea>
+      <mat-error *ngIf="Signupform.get('u_Address').hasError('required')">Address is required</mat-error>
+    </mat-form-field>
+    <br>
+    Select Gender
+    <mat-radio-group aria-label="Select an option" formControlName="u_gender">
+      <mat-radio-button value="male">Male</mat-radio-button>
+      <mat-radio-button value="female">Female</mat-radio-button>
+    </mat-radio-group>
+    <br>
+    <mat-form-field>
+      <input matInput formControlName="u_Type" [disabled]="true">
+    </mat-form-field>
+    <br>
+
+    <div class="example-container" formGroupName="password_group">
+
+
+      <mat-form-field>
+        <input formControlName="u_password" matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput formControlName="u_confirm_password" placeholder="Enter confirm password" [type]="hide1 ? 'password' : 'text'">
+        <mat-icon matSuffix (click)="hide1 = !hide1">{{hide1 ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </mat-form-field>
+
+    </div>
+    <mat-error *ngIf="Signupform.get('password_group').hasError('notSame')">Both password and confirm password should be same.</mat-error>
+
+    <br>
+    <div class="example-form">
+      <mat-form-field class="example-full-width">
+        <span matPrefix>+91 &nbsp;</span>
+        <input formControlName="u_mobileno" type="tel" matInput placeholder="Enter Mobile Number">
+        <mat-icon matSuffix>phone</mat-icon>
+      </mat-form-field>
+
+    </div>
+    <br>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Choose a date" formControlName="u_dob">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <br>
+
+    <input type="file" formControlName="u_img" (change)="onChange($event)" class="form-control">
+
+  </div>
+
+
+  <button type="submit" mat-button color="primary">signup</button>
+  <button mat-button color="primary" (click)="onSignupCancel()">Cancel</button>
+</form>

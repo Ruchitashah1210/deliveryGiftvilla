@@ -1,0 +1,32 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 50%;
+}
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 50%;
+}
+
+.example-full-width {
+  width: 50%;
+}
