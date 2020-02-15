@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
             alert("valid");
             localStorage.setItem('u_EmailId',this.loginForm.get('u_EmailId').value);
             console.log('nav/dashboard');
-            this._roter.navigate(['/nav/dashboard']);
+            this._roter.navigate(['/dashboard']);
           }
           else{
             alert("invalid id & password");
