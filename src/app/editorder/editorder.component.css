@@ -1,0 +1,34 @@
+.demo {
+  height: 10%;
+  width: 100%;
+  background-color: lightpink;
+  text-align: center;
+  /* font-family: 'Times New Roman', 'Times', 'serif'; */
+  font-size: 200%;
+}
+table {
+  width: 100%;
+  height: 10%;
+  /* background-color: lightcyan; */
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+img {
+  float: left;
+}
+
+td,
+th {
+  width: 10%;
+}
+
+.bgc {
+  width: 100%;
+}
+
+.btn {
+  text-align: right;
+}

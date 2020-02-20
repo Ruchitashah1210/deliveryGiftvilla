@@ -1,0 +1,24 @@
+<!-- <p>editorder works!</p> -->
+<p class="demo"><span><img src="../../assets/giftvilla_logo.jpg" height="100px" width="100px"> Giftvilla WELCOME :-
+  {{u_EmailId | titlecase}}</span></p>
+<!-- <mat-form-field>
+<mat-label>Filter</mat-label>
+<input matInput (keyup)="applyFilter($event)" placeholder="Search Record here">
+</mat-form-field> -->
+
+<div clas="container">
+  <form [formGroup]="track_update" (ngSubmit)="onTrackSubmit()" class="container">
+    <div class="form-group">
+      <select formControlName="status">
+        <option [selected]="track_id">Packing</option>
+        <option [selected]="track_id">On the Way</option>
+        <option [selected]="track_id">Delivered</option>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <button type="submit" mat-button color="primary">UPDATE</button>
+      <button class="btn btn-primary" (click)="onTrackCancel()">Cancel</button>
+    </div>
+  </form>
+</div>

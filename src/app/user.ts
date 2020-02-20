@@ -8,7 +8,15 @@ export class User {
       public u_password:string,
       public u_mobileno:number,
       public u_dob:string,
-      public u_img:string
+      public u_img:string,
+      public status?:string,
+      public pro_name?:string,
+      public pro_id?:number,
+      public fk_pro_id?:number,
+      public fk_order_id?:number,
+      public order_id?:number,
+      public fk_detail_id?:number,
+      public track_id?:number
     )
     {}
 }

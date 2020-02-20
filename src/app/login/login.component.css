@@ -27,10 +27,22 @@ mat-card-content {
 }
 
 .back {
-  /* background-image: url(../../assets/OIP.jpg); */
-  background-color: lightsalmon;
-  border-radius: 10px;
+   /* background-image: url(../../assets/login_img.jpg); */
+   height: 100%;
+   width: 100%;
+  /* background-image: linear-gradient(to right,#c0392b,#7d5b8a); */
+  background-color: lightcoral;
 }
 .img1 {
   border-radius: 10px;
+}
+
+.d3
+{
+  padding-left: 35%;
+}
+
+.d1
+{
+  padding-left: 70%;
 }

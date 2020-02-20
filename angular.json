@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "deliverboyGiftvilla"
+  "defaultProject": "deliverboyGiftvilla",
+  "cli": {
+    "analytics": false
+  }
 }

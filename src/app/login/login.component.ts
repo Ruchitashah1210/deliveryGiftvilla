@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LogindataService } from './logindata.service';
 import { Router } from '@angular/router';
-import { User } from './user';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -41,6 +41,15 @@ export class LoginComponent implements OnInit {
     else {
       alert("id password should not be empty.");
     }
+  }
+
+  onSkipRegister()
+  {
+    this._roter.navigate(['/']);
+  }
+  onRegister()
+  {
+    this._roter.navigate(['/signup']);
   }
 }
 

@@ -1,6 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { MatSort } from '@angular/material/sort';
 import { User } from '../user';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { UserserviceService } from '../userservice.service';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,8 +14,13 @@ import { User } from '../user';
 })
 export class DashboardComponent implements OnInit {
   u_EmailId: string;
-  arr: User[] = [];
-  displayedColumns: string[] = ['u_EmailId', 'order_id', 'pro_name', 'status', 'action'];
+  u_Name:string;
+  order_id:number;
+  status:string;
+  pro_name:string;
+  user_tbl: User[] = [];
+  tarck_id:number;
+  displayedColumns: string[] = ['order_id','u_EmailId', 'pro_name','bill_date' , 'status', 'act'];
   dataSource: MatTableDataSource<User>;
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -27,8 +37,9 @@ export class DashboardComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
-  user_tbl: User[] = [];
+
   ngOnInit() {
+    this.u_Name=localStorage.getItem('u_Name');
     this._userdataservice.getUserData().subscribe(
       (data: User[]) => {
         console.log(data);
@@ -38,6 +49,10 @@ export class DashboardComponent implements OnInit {
         this.dataSource.sort = this.sort;
       }
     );
+  }
+  onEditClick(track_id){
+    console.log(track_id);
+    this._roter.navigate(['/editorder',track_id]);
   }
 }
 

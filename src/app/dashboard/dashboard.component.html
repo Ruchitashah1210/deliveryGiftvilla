@@ -1,58 +1,59 @@
-<!-- <p>dashboard works!</p> -->
-<h1 class="demo">Welcome </h1>
+<!-- <h1 class="demo"><span><img src="../../assets/giftvilla_logo.jpg" height="50px" width="50px"> Giftvilla WELCOME :-
+    {{u_EmailId | titlecase}}</span></h1> -->
+<app-header></app-header>
 <mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search Record Here">
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Search Record here">
 </mat-form-field>
 
 <div class="mat-elevation-z8">
   <table mat-table [dataSource]="dataSource" matSort>
-    <ng-container matColumnDef="u_EmailId">
-      <!-- <td mat-cell *matCellDef="u_EmailId" ></td> -->
-      <!-- <mat-checkbox></mat-checkbox> -->
-      <th mat-header-cell *matHeaderCellDef>
-        <button mat-raised-button color="warn" (click)="onDeleteAllClick()">Delete Selected</button>
-      </th>
-      <td mat-cell *matCellDef="let row">
-        <input type="checkbox" (change)="onCheckBoxChange(row)">
-      </td>
-    </ng-container>
+
+    <!-- ID Column -->
     <ng-container matColumnDef="order_id">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Order_ID </th>
       <td mat-cell *matCellDef="let row"> {{row.order_id}} </td>
     </ng-container>
+
+    <!-- Progress Column -->
+    <ng-container matColumnDef="u_EmailId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> u_EmailId </th>
+      <td mat-cell *matCellDef="let row"> {{row.u_EmailId|titlecase}} </td>
+    </ng-container>
+
+    <!-- Color Column -->
     <ng-container matColumnDef="pro_name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
-      <td mat-cell *matCellDef="let row"> {{row.pro_name}} </td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Product Name </th>
+      <td mat-cell *matCellDef="let row"> {{row.pro_name|titlecase}} </td>
     </ng-container>
+
+    <ng-container matColumnDef="bill_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Bill_Date </th>
+      <td mat-cell *matCellDef="let row"> {{row.bill_date}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
     <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Image</th>
-      <td mat-cell *matCellDef="let row">{{row.status}}</td>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> status </th>
+      <td mat-cell *matCellDef="let row"> {{row.status}} </td>
     </ng-container>
-    <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef> Action </th>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="act">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Actions </th>
       <td mat-cell *matCellDef="let row">
-        <button color="warn" (click)="onDelete(row)" mat-mini-fab aria-label="Example icon-button with a heart icon">
-          <mat-icon>delete</mat-icon>
-        </button>
-        <button color="warn" (click)="onedituser(row.u_EmailId)" mat-mini-fab
+        <button (click)="onEditClick(row.track_id)" mat-icon-button color="primary"
           aria-label="Example icon-button with a heart icon">
           <mat-icon>edit</mat-icon>
         </button>
-        <button (click)="onViewmore(row)" mat-mini-fab color="primary"
-          aria-label="Example icon-button with a heart icon">
-          <mat-icon>more</mat-icon>
-        </button>
-        <button (click)="onImageEdit(row)" mat-mini-fab color="primary"
-          aria-label="Example icon-button with a heart icon">
-          <mat-icon>image</mat-icon>
-        </button>
-
       </td>
     </ng-container>
+
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;">
     </tr>
-
   </table>
-  <mat-paginator [pageSizeOptions]="[ 5,10,40,80]"></mat-paginator>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
 </div>
+<app-footer></app-footer>

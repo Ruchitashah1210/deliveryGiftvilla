@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 
 export class SignupformComponent implements OnInit {
   hide = true;
-  hide1:true;
+  hide1 = true;
   Signupform: FormGroup;
   selectedFile: File = null;
 
@@ -63,7 +63,7 @@ export class SignupformComponent implements OnInit {
       (x: any) => {
         console.log(x)
         alert('Your Detalis Are Saved');
-        this._router.navigate(['/nav/user']);
+        this._router.navigate(['/dashboard']);
       }
     );
   }
@@ -78,6 +78,6 @@ export class SignupformComponent implements OnInit {
   }
 
   onSignupCancel() {
-    this._router.navigate(['/nav/signup']);
+    this._router.navigate(['/']);
   }
 }
