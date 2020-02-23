@@ -1,5 +1,6 @@
-<mat-card >
-  <mat-card-title>Login</mat-card-title>
+<div  class="bgr_img" >
+<mat-card id="back">
+  <mat-card-title id="log_name" >Login</mat-card-title>
   <br>
   <mat-card-content>
     <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
@@ -11,7 +12,7 @@
       </p>
       <p>
         <mat-form-field>
-          <input matInput formControlName="u_EmailId" placeholder="Enter EmailId">
+          <input matInput formControlName="u_EmailId" placeholder="Enter EmailId" id="wid_email" >
           <mat-label *ngIf="loginForm.get('u_EmailId').hasError('required') && !loginForm.get('u_EmailId').pristine ">
             Email
             should not be empty</mat-label>
@@ -22,7 +23,7 @@
       </p>
       <p>
         <mat-form-field>
-          <input type="password" matInput formControlName="u_password" placeholder="ENTER PASSWORD">
+          <input type="password" matInput formControlName="u_password" placeholder="ENTER PASSWORD" id="wid_pass" >
           <mat-label *ngIf="loginForm.get('u_password').hasError('required') && !loginForm.get('u_password').pristine ">
             password should not be empty</mat-label>
         </mat-form-field>
@@ -31,14 +32,15 @@
         {{ error }}
       </p> -->
       <div class="Button">
-        <button type="submit" mat-button color="primary">Login</button>
-      </div>
+        <button type="submit"  id="btn-style"  mat-button color="primary">Login</button>
+      </div><br><br>
       <div>
-        <button class="d1" mat-button (click)="onRegister()" color="primary">Register</button>
+        <button class="d1"  mat-button (click)="onRegister()" color="primary"><u>Register</u></button>
       </div>
     </form>
   </mat-card-content>
 </mat-card>
+</div>
 
 <!-- <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
   <mat-form-field>
@@ -58,4 +60,3 @@
   <br>
   <button type="submit" mat-button color="primary">Login</button>
 </form> -->
-0

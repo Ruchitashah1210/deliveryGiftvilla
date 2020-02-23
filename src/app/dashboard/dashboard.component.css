@@ -9,7 +9,11 @@ table {
   width: 100%;
   /* background-color: lightcyan; */
 }
-
+#search
+{
+  width: 50%;
+  margin-left: 10px;
+}
 .mat-form-field {
   font-size: 14px;
   width: 100%;
@@ -24,7 +28,7 @@ td, th {
 
 .bgc{
   width:100%;
-  //background-color: lightgrey;
+  background-color: lightgrey;
 }
 
 .btn{

@@ -1,20 +1,30 @@
-.back {
+
+#demo1
+{
   float: left;
+  margin-left: 300px;
+  position: relative;
+  bottom:50px;
 }
-.d1 {
+#demo2
+{
   float: left;
-  padding-right:150px;
+  margin-left: 200px;
+  position: relative;
+  bottom:50px;
 }
-.d2 {
+#demo3
+{
   float: left;
-  padding-right:150px;
+  margin-left: 200px;
+  position: relative;
+  bottom:50px;
 }
-.d3 {
+#demo4
+{
   float: left;
-  padding-right:150px;
+  margin-left: 200px;
+  position: relative;
+  bottom:50px;
 }
-.d4 {
-  float: right;
-  margin-top: -200px;
-  /* padding-right:50px; */
-}
+

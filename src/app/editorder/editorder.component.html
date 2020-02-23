@@ -1,15 +1,14 @@
-<!-- <p>editorder works!</p> -->
-<p class="demo"><span><img src="../../assets/giftvilla_logo.jpg" height="100px" width="100px"> Giftvilla WELCOME :-
-  {{u_EmailId | titlecase}}</span></p>
-<!-- <mat-form-field>
-<mat-label>Filter</mat-label>
-<input matInput (keyup)="applyFilter($event)" placeholder="Search Record here">
-</mat-form-field> -->
-
+<app-header></app-header>
+<div id="editorder" >
 <div clas="container">
   <form [formGroup]="track_update" (ngSubmit)="onTrackSubmit()" class="container">
     <div class="form-group">
-      <select formControlName="status">
+      <select formControlName="status"  style=" width: 80%;
+      padding: 12px 20px;
+      margin: 10px 0px 0px 0px;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 2px solid red;">
         <option [selected]="track_id">Packing</option>
         <option [selected]="track_id">On the Way</option>
         <option [selected]="track_id">Delivered</option>
@@ -17,8 +16,9 @@
     </div>
     <br>
     <div class="form-group">
-      <button type="submit" mat-button color="primary">UPDATE</button>
-      <button class="btn btn-primary" (click)="onTrackCancel()">Cancel</button>
+      <button type="submit" mat-button color="primary"  id="btn1" >UPDATE</button>
+      <button class="btn btn-primary"  id="btn2" (click)="onTrackCancel()">Cancel</button>
     </div>
   </form>
+</div>
 </div>
